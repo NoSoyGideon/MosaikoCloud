@@ -1,0 +1,7 @@
+#nose
+    docker run -itd --name warmog -p 9000:9000 -p 9001:9001 -e "MINIO_ROOT_USER=david" -e "MINIO_ROOT_PASSWORD=lachupagratis" minio/minio server --console-address :9001 /data
+
+
+#librerias
+pip install boto3
+pip install minio -- esta no la de arriba

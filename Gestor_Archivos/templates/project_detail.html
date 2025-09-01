@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.name }}</title>
+</head>
+<body>
+
+
+    {% if current %}
+    <a href="{% url 'back' %}">
+        <button type="button">Volver</button>
+    </a>
+
+    {% endif %}
+    <h1>Archivos en el proyecto {{ project.name }}</h1>
+
+    <ul>
+        {% for carpeta in carpetas %}
+            <a href="{% url 'project_detail' project_id=project.id carpeta=carpeta %}">{{ carpeta }}</a>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for archivo in archivos %}
+            <li>{{ archivo }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
