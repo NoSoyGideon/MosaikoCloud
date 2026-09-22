@@ -4,6 +4,7 @@ import io.minio.BucketExistsArgs;
 import io.minio.MakeBucketArgs;
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
@@ -14,6 +15,9 @@ import java.util.logging.Logger;
 public class WarmogComponent {
     MinioClient minioClient;
     private final String MAIN_BUCKET = "usuarios";
+    @Value("${config.production}")
+    private boolean production;
+
 
     public WarmogComponent() {
         this.minioClient = MinioClient.builder().endpoint("http://localhost:9000").credentials("Mosaiko","easyHammer").build();
@@ -26,7 +30,12 @@ public class WarmogComponent {
                                 .build());
             }
         }catch (Exception e){
-            e.printStackTrace();
+            if(!this.production) {
+
+                this.minioClient = null;
+            }else{
+                e.printStackTrace();
+            }
         }
 
 
