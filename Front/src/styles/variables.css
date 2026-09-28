@@ -1,0 +1,48 @@
+/* src/styles/variables.css */
+
+:root {
+  /* Marca / Primario */
+  --primary: #39A892;
+  --primary-hover: #2D8876;
+  --primary-focus: rgba(57, 168, 146, 0.25);
+
+  /* Fondos y Textos (Modo Claro) */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+
+  /* Bordes */
+  --border-subtle: #e2e8f0;
+  --border-comic: #0f172a; /* Negro suave no tan negro estilo cómic */
+
+  /* Estados Semánticos */
+  --color-success: #10B981;
+  --color-danger: #E11D48;
+  --color-warning: #D97706;
+  --color-info: #0284C7;
+}
+
+/* Modo Oscuro */
+.dark {
+  /* Marca / Primario */
+  --primary: #39A892;
+  --primary-hover: #48C4AD;
+  --primary-focus: rgba(72, 196, 173, 0.3);
+
+  /* Fondos y Textos (Modo Oscuro) */
+  --bg-app: #020617;
+  --bg-surface: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+
+  /* Bordes */
+  --border-subtle: #1e293b;
+  --border-comic: #334155; /* Trazo grueso sutil para modo oscuro */
+
+  /* Estados Semánticos */
+  --color-success: #34D399;
+  --color-danger: #FB7185;
+  --color-warning: #FBBF24;
+  --color-info: #38BDF8;
+}
